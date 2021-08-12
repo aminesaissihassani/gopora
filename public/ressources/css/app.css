@@ -1,0 +1,93 @@
+:root{
+    --primary-color: #333;
+}
+
+*{
+    text-decoration: none !important;
+}
+
+.navbar {
+    background-color: #fff;
+}
+
+.navbar-auth {
+    margin-left: 1000px;
+}
+
+@media screen and (max-width: 1000px) {
+    .navbar-auth {
+        margin-left: 0;
+    }
+}
+
+.article-title {
+    color: black;
+}
+
+.top-3-articles {
+    background-color: rgb(240, 240, 240);
+}
+
+.post-card {
+    background-color: #f8f8f8;
+}
+
+
+body{
+    background-color: #eee
+}
+
+.latest-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.latest-img-div{
+    height: 200px;
+}
+
+.news-img-div{
+    height: 150px;
+}
+
+/* Article Start */
+
+.article-img-div{
+    height: 400px;
+}
+
+.article-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Article End */
+
+
+/* Team Start */
+
+.team-img-div{
+    height: 200px;
+}
+
+.team-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Team End */
+
+/* Create Article Start */
+
+.create-post {
+    border: 1px solid #d6d8da;
+    border-radius: 5px;
+}
+
+/* Create Article End */

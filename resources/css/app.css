@@ -1,0 +1,9 @@
+.navbar-auth {
+    margin-left: 1000px;
+}
+
+@media screen and (max-width: 1000px) {
+    .navbar-auth {
+        margin-left: 0;
+    }
+}

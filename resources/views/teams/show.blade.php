@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-9 mt-4 mb-5">
             <div class="row mb-3">
-                <h2>FNATIC</h2>
+                <h2>{{ ucwords($team->name) }}</h2>
             </div>
             <div class="row">
                 <div class="col-3">
@@ -17,16 +17,18 @@
                     </div>
                 </div>
                 <div class="col-9">
-                    <p><strong>ESport: </strong>League of Legends</p>
-                    <p><strong>Region: </strong>Europe</p>
-                    <p><strong>Created: </strong>March 14, 2011</p>
+                    {{-- @dd($team->esport) --}}
+                    <p><strong>ESport: </strong><a href="/esports/{{ $team->esport->slug }}">{{ ucwords($team->esport->name) }}</a></p>
+                    <p><strong>Region: </strong>{{ $team->region }}</p>
+                    {{-- <p><strong>Created: </strong>{{ $team->founded_at->diffForHumans() }}</p> --}}
+                    <p><strong>Created: </strong>{{ $team->founded_at }}</p>
                 </div>
             </div>
             <div class="row mt-4">
-                <h3 class="mb-3">FNATIC's News</h3>
-                @include('post-card/post-card')
-                @include('post-card/post-card')
-                @include('post-card/post-card')
+                <h3 class="mb-3">{{ ucwords($team->name) }}'s News</h3>
+                @foreach ($team->posts as $post)
+                    @include('post-card/post-card')
+                @endforeach
             </div>
         </div>
         <div class="col-3">

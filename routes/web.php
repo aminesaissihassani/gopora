@@ -25,18 +25,20 @@ Route::get('/', function () {
 
 
 Route::get('/', [PostController::class,'index'])->name('home');
-Route::get('post', [PostController::class,'show'])->name('post.show');
+
+
+Route::get('posts/{post:slug}', [PostController::class,'show']);
 Route::get('new', [PostController::class,'create'])->name('post.create');
 Route::get('edit', [PostController::class,'edit'])->name('post.edit');
 
 
 
-Route::get('team', [TeamController::class,'show'])->name('team.show');
+Route::get('teams/{team:slug}', [TeamController::class,'show']);
 Route::get('newTeam', [TeamController::class,'create'])->name('team.create');
 Route::get('editTeam', [TeamController::class,'edit'])->name('team.edit');
 
 
-Route::get('esport', [ESportController::class,'show'])->name('esport.show');
+Route::get('esports/{eSport:slug}', [ESportController::class,'show']);
 Route::get('newEsport', [ESportController::class,'create'])->name('esport.create');
 Route::get('editEsport', [ESportController::class,'edit'])->name('esport.edit');
 

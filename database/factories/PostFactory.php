@@ -30,7 +30,9 @@ class PostFactory extends Factory
             'e_sport_id' => ESport::factory(),
             'title' => $this->faker->sentence(),
             'slug' => $this->faker->unique()->slug(),
-            'body' => '<p>' . implode('</p><p>', $this->faker->paragraphs(6)) . '</p>',
+            'image' => $this->faker->word(),
+            'body' => $this->faker->paragraph(),
         ];
     }
+    # '<p>' . implode('</p><p>', $this->faker->paragraphs(6)) . '</p>'
 }

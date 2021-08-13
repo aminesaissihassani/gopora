@@ -23,6 +23,11 @@
                     </div>
 
                     <div class="form-group pt-3">
+                        <label for="esport">ESport <span class="require">*</span></label>
+                        <input type="text" class="form-control" name="esport">
+                    </div>
+
+                    <div class="form-group pt-3">
                         <label for="region">Region <span class="require">*</span></label>
                         <input type="text" class="form-control" name="region">
                     </div>

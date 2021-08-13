@@ -7,25 +7,26 @@
 
 <div class="container">
     <div class="row mt-4">
-        <h2 class="text-dark"><strong>Latest News</strong></h2>
-        <!-- News side Start -->
-        <div class="col-9 text-dark mb-5">
-            <!-- The latest 3 news Start-->
-            <div class="row py-3 top-3-articles mb-3">
-                @include('post-card/featured-post-card')
-                @include('post-card/featured-post-card')
-                @include('post-card/featured-post-card')
+        @if($posts->count())
+            <h2 class="text-dark"><strong>Latest News</strong></h2>
+            <!-- News side Start -->
+            <div class="col-9 text-dark mb-5">
+                <!-- The latest 3 news Start-->
+                <div class="row py-3 top-3-articles mb-3">
+                    @foreach ($featured_posts as $post)
+                        @include('post-card/featured-post-card')
+                    @endforeach
+                </div>
+                <!-- The latest 3 news End-->
+                @foreach ($posts as $post)
+                    @include('post-card/post-card')
+                @endforeach
             </div>
-            <!-- The latest 3 news End-->
-            @include('post-card/post-card')
-            @include('post-card/post-card')
-            @include('post-card/post-card')
-            @include('post-card/post-card')
-            @include('post-card/post-card')
-            @include('post-card/post-card')
-            @include('post-card/post-card')
-            @include('post-card/post-card')
-        </div>
+        @else
+            <div class="col-9 text-dark mb-5">
+                <p class="text-center">No posts yet, Please check later</p>
+            </div>
+        @endif
         <!-- News side End -->
 
         <!-- Right Side Start -->

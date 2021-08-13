@@ -46,7 +46,10 @@ class ESportController extends Controller
      */
     public function show(ESport $eSport)
     {
-        return view('esports.show');
+        return view('esports.show', [
+            'esport' => $eSport,
+            'posts' => $eSport->posts
+        ]);
     }
 
     /**

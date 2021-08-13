@@ -23,7 +23,7 @@ class TeamFactory extends Factory
     public function definition()
     {
         return [
-            'e_sports_id' => ESport::factory(),
+            'e_sport_id' => ESport::factory(),
             'name' => $this->faker->word(),
             'slug' => $this->faker->unique()->slug(),
             'region' => $this->faker->word(),

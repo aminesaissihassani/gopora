@@ -23,7 +23,7 @@ class Team extends Model
         return $this->hasMany(Post::class);
     }
 
-    public function esport()
+    public function eSport()
     {
         return $this->belongsTo(ESport::class);
     }

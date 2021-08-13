@@ -16,7 +16,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('home', [
+            'featured_posts' => Post::latest()->limit(3)->get(),
+            'posts' => Post::latest()->get()->skip(3),
+        ]);
     }
 
     /**

@@ -15,7 +15,7 @@ class CreateTeamsTable extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('e_sports_id')->constrained();
+            $table->foreignId('e_sport_id')->constrained();
             $table->string('slug')->unique();
             $table->string('name');
             $table->string('region');

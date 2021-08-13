@@ -6,6 +6,10 @@
     text-decoration: none !important;
 }
 
+a {
+    color: black;
+}
+
 .navbar {
     background-color: #fff;
 }

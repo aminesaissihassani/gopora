@@ -35,7 +35,19 @@ class ESportController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'slug' => 'required|unique:e_sports,slug|max:255',
+            'name' => 'required|min:3|max:255'
+        ]);
+
+        $esport = new ESport();
+
+        $esport->slug = $request->slug;
+        $esport->name = $request->name;
+
+        $esport->save();
+
+        return redirect(route('esport.show', $request->slug));
     }
 
     /**
@@ -60,7 +72,9 @@ class ESportController extends Controller
      */
     public function edit(ESport $eSport)
     {
-        return view('esports.edit');
+        return view('esports.edit',[
+            'esport' => $eSport
+        ]);
     }
 
     /**
@@ -72,7 +86,15 @@ class ESportController extends Controller
      */
     public function update(Request $request, ESport $eSport)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|min:3|max:255'
+        ]);
+
+        $eSport->name = $request->name;
+
+        $eSport->update();
+
+        return redirect()->route('esport.show', $eSport->slug);
     }
 
     /**
@@ -83,6 +105,8 @@ class ESportController extends Controller
      */
     public function destroy(ESport $eSport)
     {
-        //
+        $eSport->delete();
+
+        return redirect()->route("home")->with('success', 'Team Deleted!');
     }
 }

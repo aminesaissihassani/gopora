@@ -24,7 +24,7 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function esport()
+    public function eSport()
     {
         return $this->belongsTo(ESport::class);
     }

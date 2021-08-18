@@ -15,32 +15,44 @@
 
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container-fluid">
-            <a class="navbar-brand" style="font-family: 'Comic Sans MS', 'Arial'" href="#">Gopora</a>
+            <a class="navbar-brand" style="font-family: 'Comic Sans MS', 'Arial'" href="{{ route('home') }}">Gopora</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse text-dark" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" aria-current="page" href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">News</a>
+                        <a class="nav-link" href="{{ route('home') }}">Articles</a>
                     </li>
+                    @auth
                     <li class="nav-item">
                         <a class="nav-link" href="#">Dashboard</a>
                     </li>
+                    @endauth
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="{{ route('about') }}">About</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav navbar-auth">
+                    @auth
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                        <form action="{{ route('logout') }}" method="post" class="nav-link">
+                            @csrf
+                            <button type="submit" class="btn btn-auth">Logout</button>
+                        </form>
+                    </li>
+                    @endauth
+                    @guest
+                    <li class="nav-item px-1">
+                        <a class="nav-link btn btn-auth" href="{{ route('login') }}">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Register</a>
+                        <a class="nav-link btn btn-auth" href="{{ route('register') }}">Register</a>
                     </li>
+                    @endguest
                 </ul>
             </div>
         </div>

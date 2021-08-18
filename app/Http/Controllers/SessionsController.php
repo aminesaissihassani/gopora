@@ -38,13 +38,11 @@ class SessionsController extends Controller
         $this->validate($request , [
             'email' => 'required|email',
             'password' => 'required'
-
         ]);
-
 
         if(!Auth::attempt(['email' => $request->email, 'password' => $request->password]))
         {
-            return back()->with('status','invalid login details');
+            return back()->with('status','Invalid Login Details');
         }
 
         return redirect()->route('home');
@@ -90,7 +88,7 @@ class SessionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy()
     {
         Auth::logout();
 

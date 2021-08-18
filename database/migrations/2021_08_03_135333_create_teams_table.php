@@ -19,7 +19,7 @@ class CreateTeamsTable extends Migration
             $table->string('slug')->unique();
             $table->string('name');
             $table->string('region');
-            $table->text('logo');
+            $table->string('logo');
             $table->date('founded_at');
             $table->timestamps();
         });

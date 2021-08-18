@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserAuthenticated
 {
@@ -16,6 +17,22 @@ class UserAuthenticated
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if (Auth::check())
+        {
+            # if user admin take him to home
+            if (Auth::user()->isAdmin())
+            {
+                return redirect(route('home'));
+            }
+
+            # allow user to proceed with request
+            else if (Auth::user()->isUser())
+            {
+                return $next($request);
+            }
+        }
+
+        abort(404);  # for other user throw 404 error
+        // return $next($request);
     }
 }

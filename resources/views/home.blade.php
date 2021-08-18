@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row mt-4">
         @if($posts->count())
-            <h2 class="text-dark"><strong>Latest News</strong></h2>
+            <h2 class="text-dark"><strong>Latest Articles</strong></h2>
             <!-- News side Start -->
             <div class="col-9 text-dark mb-5">
                 <!-- The latest 3 news Start-->

@@ -7,19 +7,24 @@
         <div class="col-md-8 col-md-offset-2">
             <h1>Edit ESport</h1>
 
-            <form action="" method="POST">
+            <form action="{{ route('esport.edit', $esport->slug) }}" method="POST">
+                @csrf
+                @method('PUT')
 
                 <div class="bg-white pb-5 pt-3 px-4 mt-4 create-post">
 
-                    <div class="form-group pt-3 has-error">
-                        <label for="slug">Slug <span class="require">*</span> <small>(This field use in url path.)</small></label>
-                        <input type="text" class="form-control" name="slug">
-                        <span class="help-block">Field not entered!</span>
+                    <div class="form-group pt-3">
+                        <label for="name">Name *</label>
+                        <input type="text" class="form-control" name="name" value="{{ $esport->name }}">
+                        @error('slug')
+                            <span class="text-danger">
+                                    {{ $message }}
+                            </span>
+                        @enderror
                     </div>
 
-                    <div class="form-group pt-3">
-                        <label for="name">Name <span class="require">*</span></label>
-                        <input type="text" class="form-control" name="name">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <button class="btn btn-primary btn-block mt-3">Update</button>
                     </div>
 
                 </div>

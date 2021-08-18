@@ -7,29 +7,39 @@
         <div class="col-md-8 col-md-offset-2">
             <h1>Edit Team</h1>
 
-            <form action="" method="POST">
-
+            <form action="{{ route('team.edit', $team->slug) }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
                 <div class="bg-white pb-5 pt-3 px-4 mt-4 create-post">
 
-                    <div class="form-group pt-3 has-error">
-                        <label for="slug">Slug <span class="require">*</span> <small>(This field use in url path.)</small></label>
-                        <input type="text" class="form-control" name="slug">
-                        <span class="help-block">Field not entered!</span>
+                    <div class="form-group pt-3">
+                        <label for="name">Name *</label>
+                        <input type="text" class="form-control" name="name" value="{{ $team->name }}">
                     </div>
 
                     <div class="form-group pt-3">
-                        <label for="name">Name <span class="require">*</span></label>
-                        <input type="text" class="form-control" name="name">
+                        <label for="e_sport_id">eSport *</label>
+                        <select class="form-select" aria-label="Default select example" name="e_sport_id">
+                            <option disabled>Select the eSport</option>
+
+                            @foreach ($esports as $esport)
+                                @if($esport->id === $team->e_sport_id)
+                                    <option value="{{ $esport->id }}" selected>{{ $esport->name }}</option>
+                                @else
+                                    <option value="{{ $esport->id }}">{{ $esport->name }}</option>
+                                @endif
+                            @endforeach
+                        </select>
+                        @error('e_sport_id')
+                            <span class="text-danger">
+                                    {{ 'The eSport field is required' }}
+                            </span>
+                        @enderror
                     </div>
 
                     <div class="form-group pt-3">
-                        <label for="esport">ESport <span class="require">*</span></label>
-                        <input type="text" class="form-control" name="esport">
-                    </div>
-
-                    <div class="form-group pt-3">
-                        <label for="region">Region <span class="require">*</span></label>
-                        <input type="text" class="form-control" name="region">
+                        <label for="region">Region *</label>
+                        <input type="text" class="form-control" name="region" value="{{ $team->region }}">
                     </div>
 
                     <div class="form-group pt-3">
@@ -38,8 +48,12 @@
                     </div>
 
                     <div class="form-group pt-3">
-                        <label for="founded_at">Founded at <span class="require">*</span></label>
-                        <input type="text" class="form-control" name="founded_at">
+                        <label for="founded_at">Founded at *</label>
+                        <input type="text" class="form-control" name="founded_at" value="{{ $team->founded_at }}">
+                    </div>
+
+                    <div class="d-flex justify-content-center align-items-center">
+                        <button class="btn btn-primary btn-block mt-3">Update</button>
                     </div>
 
                 </div>

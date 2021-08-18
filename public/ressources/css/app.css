@@ -95,3 +95,42 @@ body{
 }
 
 /* Create Article End */
+
+.btn-auth {
+    background-color: #000;
+    border-color: #000;
+    color: #fff !important;
+    border-radius: 5px;
+}
+
+.btn-edit {
+    background-color: #d0d5da;
+    border-color: #e1e3e6;
+    color: #3c434a !important;
+    border-radius: 5px;
+}
+
+
+.team-block {
+    background-color: #000;
+    border: 2px solid #fff;
+    color: #fff !important;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+}
+
+.esport-block {
+    background-color: #000;
+    border: 2px solid #fff;
+    color: #fff !important;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+}

@@ -9,10 +9,38 @@
             <!-- Article's Title -->
             <h4><strong>{{ $post->title }}</strong></h4>
             <!-- Date -->
-            <p>{{ $post->created_at->diffForHumans() }}</p>
+            <div>
+                <span>Published by {{ $post->user->name }}, {{ $post->created_at->diffForHumans() }}</span>
+                @auth
+                @if(auth()->user()->role === 'admin' || auth()->user()->id === $post->user_id)
+                <span><a href="{{ route('post.edit', $post->slug) }}" class="btn btn-edit">Edit</a></span>
+                <span>
+                    <form action="{{ route('post.delete', $post->slug) }}" method="POST" style="display: inline">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-edit">Delete</button>
+                    </form>
+                </span>
+                @endif
+                @endauth
+            </div>
+
+            <br>
+
+
+            <a href="{{ '/esports/'. $post->esport->slug  }}" class="esport-block">
+                {{ ucwords($post->esport->name) }}
+            </a>
+
+            @if($post->team)
+            <a href="{{ '/teams/'. $post->team->slug  }}" class="team-block">
+                {{ ucwords($post->team->name) }}
+            </a>
+            @endif
+
             <!-- Image -->
             <div class="article-img-div px-5 my-4">
-                <img class="article-img" src="https://s3-eu-central-1.amazonaws.com/www-staging.esports.com/WP%20Media%20Folder%20-%20esports-com/app/uploads/2021/07/51108093029_d2397f9b02_c-1-607x405.jpg" alt="">
+                <img class="article-img" src="{{ asset('storage/images/'. $post->image) }}" alt="Article's Photo">
             </div>
             <!-- Article's body -->
             <p class="mt-4">

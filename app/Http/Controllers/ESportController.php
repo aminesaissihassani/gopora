@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ESport;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class ESportController extends Controller
@@ -58,9 +59,10 @@ class ESportController extends Controller
      */
     public function show(ESport $eSport)
     {
+        // dd($eSport->posts);
         return view('esports.show', [
             'esport' => $eSport,
-            'posts' => $eSport->posts
+            'posts' => $eSport->posts->sortByDesc('created_at')
         ]);
     }
 

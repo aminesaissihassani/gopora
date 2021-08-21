@@ -8,6 +8,7 @@ use App\Models\Team;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -18,9 +19,15 @@ class PostController extends Controller
      */
     public function index()
     {
+
+        // dd(Post::latest()->paginate(5)->skip(3));
+        $ids = Post::latest()->take(3)->pluck('id');
+
+        $posts = Post::latest()->whereNotIn('id', $ids)->paginate(5);
+
         return view('home', [
             'featured_posts' => Post::latest()->limit(3)->get(),
-            'posts' => Post::latest()->get()->skip(3)
+            'posts' => $posts
         ]);
     }
 
@@ -131,6 +138,8 @@ class PostController extends Controller
             $path = explode('/', $path);
         }
 
+        Storage::delete('/public/images/'. $post->image);
+
         $post->team_id = $request->team_id;
         $post->e_sport_id = $request->e_sport_id;
         $post->title = $request->title;
@@ -151,6 +160,8 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         if(Auth::user()->role !== "admin" && $post->user_id !== Auth::user()->id) return redirect()->route('home')->with('error', 'You do not have permissions to delete this post');
+
+        Storage::delete('/public/images/'. $post->image);
 
         $post->delete();
 

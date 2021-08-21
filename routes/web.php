@@ -5,6 +5,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,7 +28,7 @@ Route::get('/', function () {
 Route::get('/', [PostController::class,'index'])->name('home');
 
 
-Route::get('posts/{post:slug}', [PostController::class,'show']);
+Route::get('posts/{post:slug}', [PostController::class,'show'])->name('post.show');
 Route::middleware('auth')->group(function () {
     # Post
     Route::get('post/new', [PostController::class,'create'])->name('post.create');
@@ -40,7 +41,7 @@ Route::middleware('auth')->group(function () {
 
 
 
-Route::get('teams/{team:slug}', [TeamController::class,'show']);
+Route::get('teams/{team:slug}', [TeamController::class,'show'])->name('team.show');
 Route::middleware('admin')->group(function () {
     # Team
     Route::get('team/new', [TeamController::class,'create'])->name('team.create');
@@ -73,10 +74,13 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::post('logout', [SessionsController::class,'destroy'])->name('logout');
+    Route::get('dashboard', [SessionsController::class,'index'])->name('dashboard');
 });
 
 
 Route::get('about-us', fn () => view('about.aboutus'))->name('about');
+Route::get('privacy', fn () => view('about.aboutus'))->name('privacy');
+Route::get('terms', fn () => view('about.aboutus'))->name('terms');
 
 
 

@@ -2,7 +2,7 @@
     <div class="col-3">
         <div class="news-img-div">
             <a href="/posts/{{ $post->slug }}">
-                <img class="latest-img" src="https://img.kooora.com/?i=corr%2f289%2fkoo_289375.jpg&z=120|90&c=27|18|471|354&h=4874" alt="">
+                <img class="latest-img" src="{{ asset('storage/images/'. $post->image) }}" alt="{{ $post->title }}">
             </a>
         </div>
     </div>

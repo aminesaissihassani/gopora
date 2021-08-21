@@ -37,7 +37,7 @@
             <div class="row mt-4">
                 <h3 class="mb-3">{{ ucwords($team->name) }}'s News</h3>
                 @if($team->posts->count())
-                    @foreach ($team->posts as $post)
+                    @foreach ($team->posts->sortByDesc('created_at') as $post)
                         @include('post-card/post-card')
                     @endforeach
                 @else

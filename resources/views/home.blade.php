@@ -21,6 +21,9 @@
                 @foreach ($posts as $post)
                     @include('post-card/post-card')
                 @endforeach
+                <div class="d-flex justify-content-center mt-3">
+                    {{ $posts->links() }}
+                </div>
             </div>
         @else
             <div class="col-9 text-dark mb-5">

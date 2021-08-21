@@ -14,7 +14,9 @@ class SessionsController extends Controller
      */
     public function index()
     {
-        //
+        return view('profile.dashboard',[
+            'posts' => auth()->user()->posts
+        ]);
     }
 
     /**

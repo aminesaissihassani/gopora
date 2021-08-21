@@ -29,7 +29,7 @@
                     </li>
                     @auth
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Dashboard</a>
+                        <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
                     </li>
                     @endauth
                     <li class="nav-item">
@@ -84,8 +84,8 @@
                 </div>
                 <div class="col-3">
                     <div class="row mb-4"><strong>Legal</strong></div>
-                    <p><a href="#" style="text-decoration: none; color: white;">Privacy Policy</a></p>
-                    <p><a href="#" style="text-decoration: none; color: white;">Terms and Conditions</a></p>
+                    <p><a href="{{ route('privacy') }}" style="text-decoration: none; color: white;">Privacy Policy</a></p>
+                    <p><a href="{{ route('terms') }}" style="text-decoration: none; color: white;">Terms and Conditions</a></p>
                 </div>
                 <div class="col-3">
                     <div class="row mb-4"><strong>Contact</strong></div>

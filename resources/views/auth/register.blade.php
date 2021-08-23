@@ -52,7 +52,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center align-items-center">
-                        <button class="btn btn-primary btn-block mt-3">Register</button>
+                        <button class="btn btn-edit btn-block mt-3">Register</button>
                     </div>
 
                 </div>

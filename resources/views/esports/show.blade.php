@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-9 mt-4 mb-5">
             <div>
                 <h1>{{ ucwords($esport->name) }}</h1>
@@ -22,7 +22,7 @@
             </div>
 
             <div class="row mt-4">
-                <h3 class="mb-4">{{ ucwords($esport->name) }}'s News</h3>
+                <h3 class="mb-4">{{ ucwords($esport->name) }}'s Articles</h3>
                 @if($posts->count())
                     @foreach ($posts as $post)
                         @include('post-card/post-card')

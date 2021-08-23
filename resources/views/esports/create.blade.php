@@ -7,7 +7,7 @@
         <div class="col-md-8 col-md-offset-2">
             <h1>New ESport</h1>
 
-            <form action="{{ route('esport.create') }}" method="POST">
+            <form action="{{ route('esport.create') }}" method="POST" class="mb-5">
                 @csrf
 
                 <div class="bg-white pb-5 pt-3 px-4 mt-4 create-post">
@@ -33,7 +33,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center align-items-center">
-                        <button class="btn btn-primary btn-block mt-3">Create</button>
+                        <button class="btn btn-edit btn-block mt-3">Create</button>
                     </div>
 
                 </div>

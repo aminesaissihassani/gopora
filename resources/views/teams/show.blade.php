@@ -11,6 +11,7 @@
                 <h2>{{ ucwords($team->name) }}</h2>
                 @auth
                 @if(auth()->user()->role === 'admin')
+                <div class="mb-3">
                     <span><a href="{{ route('team.edit', $team->slug) }}" class="btn btn-edit">Edit</a></span>
                     <span>
                         <form action="{{ route('team.delete', $team->slug) }}" method="POST" style="display: inline">
@@ -19,6 +20,7 @@
                             <button class="btn btn-edit">Delete</button>
                         </form>
                     </span>
+                </div>
                 @endif
                 @endauth
             </div>
@@ -35,7 +37,7 @@
                 </div>
             </div>
             <div class="row mt-4">
-                <h3 class="mb-3">{{ ucwords($team->name) }}'s News</h3>
+                <h3 class="mb-3">{{ ucwords($team->name) }}'s Articles</h3>
                 @if($team->posts->count())
                     @foreach ($team->posts->sortByDesc('created_at') as $post)
                         @include('post-card/post-card')

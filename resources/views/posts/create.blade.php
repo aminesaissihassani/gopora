@@ -78,7 +78,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center align-items-center">
-                        <button class="btn btn-primary btn-block mt-3">Publish</button>
+                        <button class="btn btn-edit btn-block mt-3">Publish</button>
                     </div>
 
                 </div>

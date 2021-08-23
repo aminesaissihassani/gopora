@@ -48,7 +48,8 @@ class ESportController extends Controller
 
         $esport->save();
 
-        return redirect(route('esport.show', $request->slug));
+        return redirect(route('home'));
+        // return redirect(route('esport.show', $request->slug));
     }
 
     /**

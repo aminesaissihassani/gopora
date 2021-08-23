@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row my-5">
         <!-- Article Start -->
-        <div class="col-9">
+        <div class="col-lg-9">
             <!-- Article's Title -->
             <h4><strong>{{ $post->title }}</strong></h4>
             <!-- Date -->

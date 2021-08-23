@@ -145,3 +145,10 @@ body{
     border-color: #212529 !important;
 }
 
+
+.btn-add {
+    background-color: #fff;
+    border-color: #e1e3e6;
+    color: #000 !important;
+    border-radius: 5px;
+}

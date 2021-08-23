@@ -7,7 +7,11 @@
         <div class="col-9 mt-4 mb-5">
             <div>
                 <h1>Welcome {{ auth()->user()->name }}!</h1>
-                <span class="btn btn-primary"><a href="{{ route('post.create') }}" class="text-white">New Post</a></span>
+                <span><a href="{{ route('post.create') }}" class="btn btn-add">New Post</a></span>
+                @if(auth()->user()->role === 'admin')
+                <span><a href="{{ route('esport.create') }}" class="btn btn-add">New eSport</a></span>
+                <span><a href="{{ route('team.create') }}" class="btn btn-add">New Team</a></span>
+                @endif
             </div>
 
             <div class="row mt-4">

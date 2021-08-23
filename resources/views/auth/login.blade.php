@@ -7,7 +7,7 @@
         <div class="w-50">
             <h1 class="text-center">Login</h1>
 
-            <form action="{{ route('login') }}" method="POST">
+            <form action="{{ route('login') }}" method="POST" class="mb-4">
                 @csrf
                 <div class="bg-white pb-5 pt-3 px-4 mt-4 create-post">
                     @if (session()->has('status'))
@@ -37,7 +37,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center align-items-center">
-                        <button class="btn btn-primary btn-block mt-3">Login</button>
+                        <button class="btn btn-edit btn-block mt-3">Login</button>
                     </div>
 
                 </div>

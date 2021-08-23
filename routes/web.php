@@ -79,8 +79,8 @@ Route::middleware('auth')->group(function () {
 
 
 Route::get('about-us', fn () => view('about.aboutus'))->name('about');
-Route::get('privacy', fn () => view('about.aboutus'))->name('privacy');
-Route::get('terms', fn () => view('about.aboutus'))->name('terms');
+Route::get('privacy', fn () => view('about.privacy'))->name('privacy');
+Route::get('terms', fn () => view('about.terms'))->name('terms');
 
 
 

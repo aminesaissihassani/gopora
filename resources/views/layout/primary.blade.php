@@ -73,21 +73,21 @@
     <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row">
-                <div class="col-3">
+                <div class="col-lg-3">
                     <div class="row mb-4" style="font-family: 'Comic Sans MS', 'Arial'"><strong>Gopora</strong></div>
                     <p>The best site for the esports news in the world!</p>
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3">
                     <div class="row mb-4"><strong>Games</strong></div>
                     <p>League Of Legends</p>
                     <p>Valorant</p>
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3">
                     <div class="row mb-4"><strong>Legal</strong></div>
                     <p><a href="{{ route('privacy') }}" style="text-decoration: none; color: white;">Privacy Policy</a></p>
                     <p><a href="{{ route('terms') }}" style="text-decoration: none; color: white;">Terms and Conditions</a></p>
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3">
                     <div class="row mb-4"><strong>Contact</strong></div>
                     <p><i class="fas fa-home mr-3"></i> El Jadida, Morocco</p>
                     <p><i class="fas fa-envelope mr-3"></i> contact@gopora.com</p>

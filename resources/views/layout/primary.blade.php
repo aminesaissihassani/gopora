@@ -70,7 +70,7 @@
     <!-- Footer Start -->
     <!-- ####################################################### -->
 
-    <footer class="bg-dark text-white py-4">
+    <footer class="bg-dark text-white py-5 mt-4">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">

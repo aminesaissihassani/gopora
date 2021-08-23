@@ -14,14 +14,14 @@
                 @endif
             </div>
 
-            <div class="row mt-4">
-                <h3 class="mb-4">Your Articles</h3>
+            <div class="row mt-4 mb-5">
+                <h3 class="mb-5">Your Articles</h3>
                 @if($posts->count())
                     @foreach ($posts as $post)
                         @include('post-card/post-card')
                     @endforeach
                 @else
-                    <p class="text-center">No posts yet, Please check later</p>
+                    <p class="text-center mb-5">No posts yet, Please check later</p>
                 @endif
             </div>
         </div>

@@ -53,7 +53,8 @@ class RegisterController extends Controller
 
         // Auth::attempt(['email' => $request->email, 'password' => $request->password]);
 
-        return redirect('/')->with('success', 'Your account has been created.');
+        // return redirect('/')->with('success', 'Your account has been created.');
+        return redirect('/');
     }
 
     /**

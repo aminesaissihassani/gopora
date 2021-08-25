@@ -7,7 +7,7 @@
 
 <div class="container">
     <div class="row mt-4">
-        @if($posts->count())
+        @if($posts && $posts->count())
             <h2 class="text-dark"><strong>Latest Articles</strong></h2>
             <!-- News side Start -->
             <div class="col-lg-9 text-dark mb-5">
